@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import { fetchProducts } from '../../services/http';
+import { api } from '../../services/api';
 
 const Products: React.FC = () => {
+
   const { data, isLoading, error } = useQuery({
     queryKey: ['products'],
-    queryFn: fetchProducts,
+    queryFn: () => api.products.getAll(),
   });
 
   if (isLoading) return <div>Loading...</div>;
@@ -27,3 +28,4 @@ const Products: React.FC = () => {
 };
 
 export default Products;
+

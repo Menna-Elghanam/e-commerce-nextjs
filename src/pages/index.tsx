@@ -1,12 +1,12 @@
-import Link from 'next/link';
+import Header from '@/components/elements/Header';
 
 const Home = () => {
   return (
     <div>
-      <p>Home </p>
-      <Link href="/product/products">
-      go to products
-      </Link>
+      <Header />
+   
+      
+     
     </div>
   );
 };
